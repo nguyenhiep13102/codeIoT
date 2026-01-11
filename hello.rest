@@ -1,0 +1,8 @@
+POST http://localhost:5001/api/fanroute/control
+Content-Type: application/json
+
+{
+  "fanId": "693f198ffa8e64558eb4dea1",
+  "status": "OFF",
+  "speed": 9
+}#

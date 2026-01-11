@@ -1,0 +1,329 @@
+# POST http://localhost:5001/api/user/sign-up
+# Content-Type: application/json
+
+# {
+#     "name": "vũ bá tư",
+#     "email": "hiep6@example.com",
+#     "password": "123456",
+#     "confirmPassword": "123456",
+#     "phone": "0987654321",
+#     "isAdmin": true
+#  }
+
+# POST   http://localhost:5001/api/user/delete-many
+# Content-Type: application/json
+
+
+# {
+#   "ids": ["68386a07891061075a0acae4", "68386a04891061075a0acae1"]
+# }
+
+
+
+# POST http://localhost:5001/api/user/sign-up
+# Content-Type: application/json
+
+# {
+#   "name": "Vũ Bá Tư",
+#   "email": "hiep18@example.com",
+#   "password": "123456",
+#   "confirmPassword": "123456",
+#   "phone": "0987654321",
+#   "isAdmin": true,
+#   "addres": "123 Đường ABC, Hà Nội",
+#   "avatar": "https://example.com/avatar.png",
+#   "access_token": "abc123",
+#   "refresh_token": "def456"
+# }
+
+
+# POST http://localhost:5001/api/user/sign-in
+# Content-Type: application/json
+
+# {
+#     "email": "hiep@example.com",
+#     "password": "123456"
+# }
+
+# POST http://localhost:5001/api/user/sign-in
+# Content-Type: application/json
+
+# {
+#     "email": "tu1234@example.com",
+#     "password": "123456"
+# }
+
+
+# PUT http://localhost:5001/api/user/delete-user/67dc04ac8bd60ac981fb6413
+# Content-Type: application/json
+
+# {
+#     "name": "Nguyễn Văn Hiệp Updated",
+#     "email": "hiepupdated@example.com",
+#     "phone": "0987111222",
+#     "isAdmin": false
+# }
+
+# PUT http://localhost:5001/api/user/update-user/67e71730cc9e19d41d9e6165 
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0ODQ0MTQwMSwiZXhwIjoxNzQ4NDQ1MDAxfQ.zdIZPspsStYJZZoSIdbsuSZbMxIo_4j7hYNkcuBwu6Q 
+# Content-Type: application/json
+
+# {
+    
+#     "phone": "0909123456"
+# }
+
+# PUT http://localhost:5001/avatar/67e71730cc9e19d41d9e6165
+# Content-Type: multipart/form-data; boundary=boundary123
+
+# --boundary123
+# Content-Disposition: form-data; name="avatar"; filename="test.jpg"
+# Content-Type: image/jpeg
+
+# < ./
+# --boundary123--
+
+
+# DELETE http://localhost:5001/api/user/delete-user/67e55de80ce1af4dfd557ce2
+# DELETE http://localhost:5001/api/user/delete-user-admin/67d9b8659026f55544a5f80d
+
+
+# DELETE http://localhost:5001/api/user/delete-user-admin/67dd4334e39df28d138df623
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDliODFhOTAyNmY1NTU0NGE1ZjgwYSIsImlhdCI6MTc0MzE5ODE3MiwiZXhwIjoxNzQzODAyOTcyfQ.Qy9jvJVyrORDc1K6LlIfc3aL0QqlLrwEwzH7Z8zifV0
+
+
+# GET http://localhost:5001/api/user/getAll
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0NDE5NTgzNywiZXhwIjoxNzQ0MTk5NDM3fQ.iAMkN8jGjFmtXCwanhaxHncmhINyt2W92NLReIfFXY8
+
+
+# GET http://localhost:5001/api/user/getUserDetail/67e71730cc9e19d41d9e6165
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0OTg0NDk4OSwiZXhwIjoxNzQ5ODQ4NTg5fQ.885fLvc6XUI0tXLmAbiMIgvEdpk3g4wxMLLTGVYaeXA
+
+
+
+
+
+# Post http://localhost:5001/api/user/refresh-token
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlhdCI6MTc0NTQ5NTAyOCwiZXhwIjoxNzQ2MDk5ODI4fQ.5RJ6q7h1mJW1hkSGH3-LIc0lZtnhIucOecVEMNKIspM; Path=/; HttpOnly; Secure
+
+
+# Post http://localhost:5001/api/user/refresh-token
+# Cookie: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlhdCI6MTc0NTUwMzI5NywiZXhwIjoxNzQ2MTA4MDk3fQ.Aykc7c3Ul3bV0YXpLYk8azTsO6bIgSpT5V0QBxO581w
+
+
+# ### Logout user
+# Post http://localhost:5001/api/user/log-out
+# Content-Type: application/json
+# Cookie: refresh_token=YOUR_REFRESH_TOKEN_HERE
+
+# {}
+
+
+
+#  API Product
+
+
+# POST http://localhost:5001/api/Product/create-Product
+# Content-Type: application/json
+
+# {
+#   "name": "pi 3sdfd",
+#   "image": "/images/iphone15.jpg",
+#   "type": "smartphone",
+#   "price": 1099,
+#   "countInStock": 15,
+#   "rating": 4.8,
+#   "discount": 4.8,
+#    "selled": 4.8,
+#   "description": "Flagship phone from Apple, powerful and sleek."
+# }
+
+# PUT http://localhost:5001/api/Product/update-Product/67f6708d69de124c5a58f623
+# Content-Type: application/json
+
+# {
+#   "name": "ip 15"
+# }
+
+# PUT http://localhost:5001/api/Product/update-Product/6826654d04256eb1f0aed75a
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc0ODAwOTI2NiwiZXhwIjoxNzQ4MDEyODY2fQ.iIBaGA_hK32Cg5VGcPw33aFsp0rXoEp4n5j5Z71W6Jw
+
+# {
+#   "name": "ip 15"
+# }
+
+
+# GET  http://localhost:5001/api/Product/getUserDetail/67f6708d69de124c5a58f623
+# Content-Type: application/json
+
+
+
+# DELETE  http://localhost:5001/api/Product/delete-Product/682701ab25fa4097feca1e1a
+# Content-Type: application/json
+
+
+# GET  http://localhost:5001/api/Product/getAllProduct
+# Content-Type: application/json
+
+# GET  http://localhost:5001/api/Product/getProductDetail/6824945c16789298f3bfed32
+# Content-Type: application/json
+
+
+
+
+
+# GET http://localhost:5001/api/Product/getPaginatedProducts?limit=2
+
+# Content-Type: application/json
+
+
+# GET http://localhost:5001/api/Product/getPaginatedProducts?limit=2&page=1
+# Content-Type: application/json
+
+# GET http://localhost:5001/api/Product/getPaginatedProducts?page=0&limit=2&search=iphone&sort=name,desc
+# Content-Type: application/json
+
+
+# POST   http://localhost:5001/api/Product/delete-many
+# Content-Type: application/json
+
+
+# {
+#   "ids": ["68387538f60f1c85634170a8", "68387530f60f1c85634170a3"]
+# }
+
+
+
+# GET http://localhost:5001/api/Product/getAllType
+
+# Content-Type: application/json
+
+# GET http://localhost:5001/api/Product/getPaginatedProducts?type=Máy%20Lọc%20Nước&page=0&limit=2&page=2
+
+
+# Content-Type: application/json
+# GET http://localhost:5001/api/Product/getPaginatedProducts?type=M%C3%A1y%20L%E1%BB%8Dc%20N%C6%B0%E1%BB%9Bc
+
+
+# Content-Type: application/json
+
+
+// odeer
+
+# GET http://localhost:5001/api/Order/get/6824945c16789298f3bfed32
+
+
+# Content-Type: application/json
+
+
+
+# POST  http://localhost:5001/api/Order/creatOrder
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDliODFhOTAyNmY1NTU0NGE1ZjgwYSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3NDk5MDczOTIsImV4cCI6MTc0OTkxMDk5Mn0.iC04t7cGoQqOr8gYhP23yGz8BorLeqmOFMeB7PS4AcA
+
+
+
+
+# {
+#   "oderItems": [
+#     {
+#       "name": "nồi cơm siêu tốc",
+#       "amount": 1,
+#       "image": "/api/v1/Product/0a53340a-a4b4-4fbe-a690-eaf205fe08f4.jpg",
+#       "price": 19999,
+#       "Product": "6826654d04256eb1f0aed75a"
+#     }
+#   ],
+#   "shippingAddress": {
+#     "fullName": "vũ bá tư",
+#     "adress": "thị trấn đồi ngô bắc giang",
+#     "city": "Bắc Giang",
+#     "phone": "0987654321"
+#   },
+#   "paymentMethod": "Thanh toán khi nhận hàng",
+#   "itemsPrice": 4000000,
+#   "shippingPrice": 30000,
+#   "taxiPrice": 400000,
+#   "totalPrice": 4430000,
+#   "user": "67d9b81a9026f55544a5f80a"
+# }
+
+# GET  http://localhost:5001/api/Order/DetailOrderbyid/685144151088def7d49912e4
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MDMwOTQwNSwiZXhwIjoxNzUwMzEzMDA1fQ.vtTeN6mYyCztf4O1Hs6ySnNyzz9tuVD5xw3SjNWgtBA
+
+# post  http://localhost:5001/api/Order/cancelOrder/6853a333fd611ce4fffa2a69
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGViM2E0YWQ3OGY3NWMzM2U2ZDYzMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3NTAzMTE4OTgsImV4cCI6MTc1MDMxNTQ5OH0.Hdpw90XiiU1sFEI7J4Yc2RMIgFngAKlOXatdHEVOoqI
+
+
+# GET  http://localhost:5001/api/Order/admin/getAllorders2?status=shipping
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MDM1Nzk3NSwiZXhwIjoxNzUwMzYxNTc1fQ.gUalz_woP_NJiEd8WVdWtHEtdAAlgooZnWlsXH7cJVI
+
+
+# Post http://localhost:5001/api/Order/admin/update-status/68545977d80e95cce518934a
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTcxNzMwY2M5ZTE5ZDQxZDllNjE2NSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1MDM2MTY4MiwiZXhwIjoxNzUwMzY1MjgyfQ.HMPGmuiHe9bpScXuLWW2-t0KquYIBoOc2D_WoLgM7f4
+
+# {
+#   "status": "shipping"
+# }
+
+# GET http://localhost:5001/api/payment/vnpay/create-payment?amount=50000&orderId=OD1234
+
+
+
+# POST http://localhost:5001/api/Order/admin/update-status/68545977d80e95cce518934a
+# Content-Type: application/json
+
+# {
+#   "status": "confirmed"
+# }const VNP_IPN_URL = 'https://14ca-58-187-228-140.ngrok-free.app/api/payment/vnpay-ipn';
+
+
+
+# post http://localhost:5001/api/payment/creatvnpay
+# Content-Type: application/json
+
+# {
+#   "amount": 10000,
+#   "bankCode": "VNBANK",
+#   "language": "vn"
+# }
+
+
+# POST http://localhost:5001/api/fanroute/createfan
+# Content-Type: application/json
+
+# {
+#   "name": "Quạt phòng ngủ",
+#   "Type": "StandingFan",
+#   "status": "tắt",
+#   "SpeedMax": 3,
+#   "Speed": 3,
+#   "TemperatureSensor": true,
+#   "Thresholdvalue": 32
+# }
+
+
+
+
+# POST http://localhost:5001/api/fanroute/control
+# Content-Type: application/json
+
+# {
+#   "fanId": "693f198ffa8e64558eb4dea1",
+#   "command": "OFF",
+#   "speed": 9
+# }
+
+# POST http://localhost:5001/api/fanroute/control
+# Content-Type: application/json
+
+# {
+#   "fanId": "693f198ffa8e64558eb4dea1",
+#   "status": "OFF",
+#   "speed": 9
+# }#
+# GET http://localhost:5001/api/fanroute/state/6941fd6f4bf4bb0bd384dc57
