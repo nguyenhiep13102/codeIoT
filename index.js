@@ -10,7 +10,7 @@ import configViewEngine from  './src/config/viewEngine.js';
 import path from "path";
 import { startMQTTListener } from "./src/config/mqttListener.js";
 import mqttController from "./src/config/mqttController.js";
-
+import { startAutoControlJob } from './src/controllers/autoControl.job.js';
 dotenv.config(); 
 const app = express();
 app.use(express.json()); 
@@ -36,6 +36,7 @@ mqttController.initMQTTController();
 connectMQTT();
 app.use(bodyParser.json());
 routes(app); 
+startAutoControlJob();
 app.listen(PORT, () => {
   console.log(`✅ Server đang chạy tại http://localhost:${PORT}`);
 });

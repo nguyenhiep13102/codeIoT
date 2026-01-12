@@ -6,8 +6,7 @@ const HistoryFanIoT = new mongoose.Schema(
     FAN_ID: { type: String,  },
     status: { type: String,  }, 
     Speed: { type: Number,  },
-    TemperatureSensor: { type: Number,},  // nhiệt độ cảm biến
-   
+    TemperatureSensor: { type: Number,},  
     
   },
   {

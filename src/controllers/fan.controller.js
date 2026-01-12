@@ -1,6 +1,6 @@
 import mqttController from "../config/mqttController.js";
 import FanIoTService from "../services/FanIoTServices.js";
-
+import historyFan from "../services/fanHistory.service.js";
 const createFanIoT = async (req, res) => {
   try {
     const {
@@ -127,11 +127,33 @@ console.log("Controlling fan:", fans);
 };
 
 
+const getFanChartData = async (req, res) => {
+  try {
+    const { fanId } = req.params;
+
+    const data = await historyFan.getLast100FanData(fanId);
+
+    res.status(200).json({
+      success: true,
+      count: data.length,
+      data,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
+  }
+};
+
+
+
 export default {
     createFanIoT,
     controlFan,
     getFanById,
     getFanByUserId,
+    getFanChartData,
 
 
 };

@@ -89,14 +89,14 @@ const updateFanFromMQTT = async (fanId, data) => {
   );
 
   const historyEntry = new HistoryFanIoT({
-    FaN_ID: fanId,
+    FAN_ID: fanId,
     status: data.status,
     Speed: data.speed,
     TemperatureSensor: data.temperature,
   });
   const saveHistory = await historyEntry.save();
+console.log("Saved history entry:", saveHistory);
 
-  
   if (result.matchedCount === 0) {
     throw new Error("FAN_NOT_FOUND");
   }
