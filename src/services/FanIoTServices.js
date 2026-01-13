@@ -114,10 +114,44 @@ const getFanById = async (id) => {
 
   return fans;
 };
+const settingAuto = async (fanId) => {
+ 
+   if (!fanId) {
+    throw new Error('FAN_ID is required');
+  }
+  const fan = await FanIoT.findOne({ FAN_ID: fanId });
+
+  if (!fan) {
+    throw new Error('FAN_NOT_FOUND');
+  }
+
+  const newAuto = !fan.Auto;
+  
+  const result = await FanIoT.updateMany(
+    { FAN_ID: fanId },
+    {
+      $set: {
+        Auto: newAuto,
+      },
+    }
+  );
+
+  return {
+    FAN_ID: fanId,
+    Auto: newAuto,
+    modifiedCount: result.modifiedCount,
+  };
+
+ 
+
+  
+};
+
 
 export default {
     CreateFanIoT,
     getFanByIdService,
     updateFanFromMQTT,
     getFanById,
+    settingAuto,
 };

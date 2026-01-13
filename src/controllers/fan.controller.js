@@ -146,6 +146,22 @@ const getFanChartData = async (req, res) => {
   }
 };
 
+const settingAuto = async (req, res) => {
+  try {
+    const { fanId } = req.params;
+     const data = await FanIoTService.settingAuto(fanId);
+    res.status(200).json({
+      success: true,
+      count: data.length,
+      data,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
+  }
+};
 
 
 export default {
@@ -154,6 +170,7 @@ export default {
     getFanById,
     getFanByUserId,
     getFanChartData,
-
+  
+    settingAuto,
 
 };

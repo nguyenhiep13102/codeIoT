@@ -8,4 +8,5 @@ routerfan.get("/getFanId/:id", Fancontrollers.getFanById);
 routerfan.post("/control", Fancontrollers.controlFan);     
 routerfan.post("/createfan", Fancontrollers.createFanIoT);  
 routerfan.get("/chart/:fanId", Fancontrollers.getFanChartData);   
+routerfan.post("/SettingAuto/:fanId", Fancontrollers.settingAuto);   
 export default routerfan;

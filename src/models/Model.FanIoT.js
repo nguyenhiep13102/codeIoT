@@ -11,7 +11,7 @@ const ModelFanIoT = new mongoose.Schema(
     Speed: { type: Number,  },
     TemperatureSensor: { type: Number,},  // nhiệt độ cảm biến
     Thresholdvalue: { type: Number,},   //giá trị ngưỡng  
-    
+    Auto :{type : Boolean},
   },
   {
     timestamps: true,

@@ -16,7 +16,13 @@ export const autoControlFanByTemperature = async () => {
       Thresholdvalue,
       status,
       speed = 0,
+      Auto,
     } = fan;
+
+    if (!Auto) {
+      console.log(`⏭️ Fan ${FAN_ID} auto OFF → skip`);
+      continue;
+    }
 
     let nextStatus = status;
     let nextSpeed = speed;
@@ -49,7 +55,7 @@ export const autoControlFanByTemperature = async () => {
       speed: nextSpeed,
     });
 
-    // ===== UPDATE DB =====
+   
     await FanIoT.updateOne(
       { FAN_ID },
       {
