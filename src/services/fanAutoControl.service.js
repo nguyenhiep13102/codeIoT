@@ -7,7 +7,7 @@ export const autoControlFanByTemperature = async () => {
     Thresholdvalue: { $ne: null },
   }).lean();
 
-  console.log('🔥 Auto controlling fans...', fans.length);
+  
 
   for (const fan of fans) {
     const {
@@ -20,14 +20,14 @@ export const autoControlFanByTemperature = async () => {
     } = fan;
 
     if (!Auto) {
-      console.log(`⏭️ Fan ${FAN_ID} auto OFF → skip`);
+      
       continue;
     }
 
     let nextStatus = status;
     let nextSpeed = speed;
 
-    // ===== LOGIC RÕ RÀNG =====
+
     if (TemperatureSensor >= 80) {
       nextStatus = 'ON';
       nextSpeed = 100;
@@ -42,7 +42,6 @@ export const autoControlFanByTemperature = async () => {
       nextSpeed = 0;
     }
 
-    // ===== KHÔNG THAY ĐỔI → KHÔNG GỬI MQTT =====
     if (nextStatus === status && nextSpeed === speed) continue;
 
     console.log(

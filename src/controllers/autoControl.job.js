@@ -9,5 +9,5 @@ export const startAutoControlJob = () => {
     } catch (err) {
       console.error('❌ Auto control error:', err.message);
     }
-  }, 5000);
+  }, 2000);
 };

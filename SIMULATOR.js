@@ -11,7 +11,7 @@ let fanState = {
   fanId: FAN_ID,
   status: "OFF",
   speed: 0,
-  temperature: 30, // từ 30 → 100
+  temperature: 80, // từ 30 → 100
 };
 
 const client = mqtt.connect(BROKER_URL);
@@ -60,7 +60,6 @@ client.on("message", (topic, message) => {
   }
 });
 
-// ================= TEMPERATURE SIM =================
 function simulateTemperature() {
   if (fanState.status === "ON") {
     // giảm nhiệt độ khi bật quạt
@@ -77,7 +76,7 @@ function simulateTemperature() {
   );
 }
 
-// ================= PUBLISH STATE =================
+
 function publishState() {
   const payload = JSON.stringify(fanState);
 
@@ -86,7 +85,7 @@ function publishState() {
   });
 }
 
-// ================= UTILS =================
+
 function random(min, max) {
   return Math.random() * (max - min) + min;
 }

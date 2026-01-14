@@ -1,6 +1,6 @@
 import createMQTTClient from "../config/mqtt.js";
 import FanIoTService from "../services/FanIoTServices.js";
-
+import Notification from "../controllers/Notification.controller.js";
 let fanState = null;
 
 export const startMQTTListener = () => {
@@ -34,7 +34,12 @@ export const startMQTTListener = () => {
         speed,
         temperature
       });
-
+       await Notification.createNotificationIfNeeded({
+  fanId,
+  status,
+  speed,
+  temperature,
+});
       console.log(` Fan ${fanId} updated in DB`);
     } catch (error) {
       console.error(" MQTT message error:", error.message);
